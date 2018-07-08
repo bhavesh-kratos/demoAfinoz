@@ -8,12 +8,12 @@ const Filters = ({ addForkFilter, addLanguageFilter, addSorters, clearFilters, a
             <Dropdown.Menu>
                 <Dropdown.Header icon='tags' content='Sort by created date' />
                 <Dropdown.Divider />
-                <Dropdown.Item icon='sort alphabet down' text='Old to new' onClick={() => addSorters(filters.CREATED_DATE_ASCEND)} />
-                <Dropdown.Item icon='sort alphabet up' text='New to Old' onClick={() => addSorters(filters.CREATED_DATE_DESCEND)} />
+                <Dropdown.Item icon='sort alphabet up' text='Old to new' onClick={() => addSorters(filters.CREATED_DATE_ASCEND)} />
+                <Dropdown.Item icon='sort alphabet down' text='New to Old' onClick={() => addSorters(filters.CREATED_DATE_DESCEND)} />
                 <Dropdown.Header icon='tags' content='Sort by updated date' />
                 <Dropdown.Divider />
-                <Dropdown.Item icon='sort alphabet down' text='Old to new' onClick={() => addSorters(filters.UPDATED_DATE_ASCEND)} />
-                <Dropdown.Item icon='sort alphabet up' text='New to Old' onClick={() => addSorters(filters.UPDATED_DATE_DESCEND)} />
+                <Dropdown.Item icon='sort alphabet up' text='Old to new' onClick={() => addSorters(filters.UPDATED_DATE_ASCEND)} />
+                <Dropdown.Item icon='sort alphabet down' text='New to Old' onClick={() => addSorters(filters.UPDATED_DATE_DESCEND)} />
             </Dropdown.Menu>
         </Dropdown>
         <br />

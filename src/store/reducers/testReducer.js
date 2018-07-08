@@ -18,7 +18,6 @@ const reducer = (state = initialState, action) => {
                 loading: true,
             };
         case fetchGitData.SUCCESS:
-            console.log('response', action.payload)
             return {
                 ...state,
                 loading: false,
@@ -36,7 +35,7 @@ const reducer = (state = initialState, action) => {
                 filters: action.payload
             };
         case ADD_LANGUAGE_FILTER:
-            console.log(action.payload.language)
+
             return {
                 ...state,
                 filters: action.payload.type,

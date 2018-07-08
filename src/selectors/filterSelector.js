@@ -24,22 +24,18 @@ export const getFilteredData = createSelector(
                 return gitData;
             }
             let FilteredResult = (providedData) => {
-                console.log(providedData)
                 switch (filter) {
                     case FORK_ON:
                         return providedData.filter(dat => dat['fork'] === true);
                     case FORK_OFF:
                         return providedData.filter(dat => dat['fork'] === false)
-                    case LANGUAGE:{
-                        console.log()
+                    case LANGUAGE:
                         return providedData.filter(dat => dat['language'] === language);
-                    }
                     default:
                         return providedData;
                 }
             }
             let SortedResult = (providedData) => {
-                console.log('asdsa', providedData)
                 switch (sorter) {
                     case CREATED_DATE_ASCEND:
                         return providedData.sort(function (a, b) {
@@ -63,9 +59,7 @@ export const getFilteredData = createSelector(
             }
             let data = JSON.parse(JSON.stringify(gitData)); // removing reference to nested objects and creating new copy
             let resultFiltered = FilteredResult(data);
-            console.log(resultFiltered);
             let result = SortedResult(resultFiltered);
-            console.log(result);
             return result;
         }
         return null;
