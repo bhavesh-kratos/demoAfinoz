@@ -36,6 +36,7 @@ const reducer = (state = initialState, action) => {
                 filters: action.payload
             };
         case ADD_LANGUAGE_FILTER:
+            console.log(action.payload.language)
             return {
                 ...state,
                 filters: action.payload.type,

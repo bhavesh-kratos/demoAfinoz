@@ -26,7 +26,7 @@ const Filters = ({ addForkFilter, addLanguageFilter, addSorters, clearFilters, a
                 <Dropdown.Header icon='language' content='Filter by language' />
                 <Dropdown.Divider />
                 {
-                    allLanguages.map(language => <Dropdown.Item key={language} text={language} onClick={() => addLanguageFilter({ 'type': filters.LANGUAGE, 'data': language })} />)
+                    allLanguages.map(language => <Dropdown.Item key={language} text={language} onClick={() => addLanguageFilter({ 'type': filters.LANGUAGE, 'language': language })} />)
                 }
             </Dropdown.Menu>
         </Dropdown>
