@@ -22,7 +22,7 @@ const Filters = ({ addForkFilter, addLanguageFilter, addSorters, clearFilters })
                 <Dropdown.Divider />
             </Dropdown.Menu>
         </Dropdown>
-        <Button icon='trash' />
+        <Button icon='trash' onClick={() => clearFilters()}/>
     </Fragment>
 )
 
