@@ -3,10 +3,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2.23em;
+  background: linear-gradient(to top, #000000, #3a3439, #6b6976, #98a6ba, #c2e9fb);
+  min-height: 100vh;
 }
 
 .card {
   min-width: 9em; 
 }
 
+.input-margin {
+  margin-top: 1.86em;
+}

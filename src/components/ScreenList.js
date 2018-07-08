@@ -4,7 +4,7 @@ import { fetchGitData, addSorters, addForkFilter, addLanguageFilter, clearFilter
 import { Icon, Input } from 'semantic-ui-react';
 import RepoList from './RepoList';
 import Filters from './Filters';
-import { getFilteredData } from '../selectors/filterSelector';
+import { getFilteredData, getAllLanguages } from '../selectors/filterSelector';
 
 class ScreenList extends Component {
     constructor(props) {
@@ -27,21 +27,24 @@ class ScreenList extends Component {
     }
 
     fetchData() {
+        this.props.clearFilters();
         this.props.fetchGitData(this.state.username);
     }
 
     render() {
         let { username } = this.state;
-        const { data, addForkFilter, addLanguageFilter, addSorters, clearFilter } = this.props;
+        const { data, addForkFilter, addLanguageFilter, addSorters, clearFilters, allLanguages } = this.props;
         return (
             <div className="App">
                 <div className="ui action input">
-                    <input type="text" placeholder="Search..." value={username} onKeyPress={this._handleKeyPress} onChange={this.handleChange} />
+                    <input type="text" placeholder="Search..." className="input-margin" value={username} onKeyPress={this._handleKeyPress} onChange={this.handleChange} />
                     <button className="ui icon button" onClick={() => this.fetchData()}>
                         <i className="search icon" />
                     </button>
                 </div>
-                {data && <Filters clearFilters={this.props.clearFilters} {...{ addForkFilter, addLanguageFilter, addSorters }} />}
+                <br />
+                {data && <Filters  {...{ clearFilters, addForkFilter, addLanguageFilter, addSorters, allLanguages }} />}
+                <br/>
                 {data && <RepoList repos={data} />}
             </div>);
     }
@@ -50,6 +53,7 @@ class ScreenList extends Component {
 function mapStateToProps(state) {
     return {
         data: getFilteredData(state),
+        allLanguages: getAllLanguages(state),
         error: state.gitData.error,
         loading: state.gitData.loading
     };

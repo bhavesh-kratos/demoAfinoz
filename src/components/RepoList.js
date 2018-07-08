@@ -9,13 +9,13 @@ const RepoCard = ({ name, html_url, created_at, updated_at, fork }) => {
                 <div className="header">{name}</div>
                 <div className="extra content">
                     <span>Created At</span>
-                    <a>{toDate(created_at)}</a>
+                    {toDate(created_at)}
                     <br />
                     <span>Updated At</span>
-                    <a>{toDate(updated_at)}</a>
+                    {toDate(updated_at)}
                 </div>
                 <p>
-                    Url: &nbsp;{html_url}
+                    Url: &nbsp;<a href={html_url}>{html_url}</a>
                     <br />
                     Forked: &nbsp;{fork ? 'Yes' : 'No'}
                 </p>

@@ -68,3 +68,12 @@ export const getFilteredData = createSelector(
         return null;
     }
 );
+
+export const getAllLanguages = createSelector(
+    [getGitData],
+    (gitData) => {
+        if (gitData !== null) {
+            return [...new Set(gitData.map(dat => dat.language))];
+        }
+    }
+)
