@@ -8,10 +8,10 @@ const RepoCard = ({ name, html_url, created_at, updated_at, fork, language }) =>
             <div className="content">
                 <div className="header">{name}</div>
                 <div className="extra content">
-                    <span>Created At</span>&nbsp;
+                    <span>Created At:</span>&nbsp;
                     {toDate(created_at)}
                     <br />
-                    <span>Updated At</span>&nbsp;
+                    <span>Updated At:</span>&nbsp;
                     {toDate(updated_at)}
                 </div>
                 <p>

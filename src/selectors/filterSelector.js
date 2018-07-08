@@ -30,8 +30,10 @@ export const getFilteredData = createSelector(
                         return providedData.filter(dat => dat['fork'] === true);
                     case FORK_OFF:
                         return providedData.filter(dat => dat['fork'] === false)
-                    case LANGUAGE:
+                    case LANGUAGE:{
+                        console.log()
                         return providedData.filter(dat => dat['language'] === language);
+                    }
                     default:
                         return providedData;
                 }
@@ -59,7 +61,8 @@ export const getFilteredData = createSelector(
                         return providedData;
                 }
             }
-            let resultFiltered = FilteredResult(gitData);
+            let data = JSON.parse(JSON.stringify(gitData)); // removing reference to nested objects and creating new copy
+            let resultFiltered = FilteredResult(data);
             console.log(resultFiltered);
             let result = SortedResult(resultFiltered);
             console.log(result);
