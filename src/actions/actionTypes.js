@@ -1,0 +1,6 @@
+
+export const FETCH_GIT_DATA = 'FETCH_GIT_DATA';
+export const ADD_SORTERS = 'ADD_SORTERS';
+export const ADD_FORK_FILTER = 'ADD_FILTERS';
+export const ADD_LANGUAGE_FILTER = 'ADD_LANGUAGE_FILTER';
+export const CLEAR_FILTERS = 'CLEAR_FILTERS';
